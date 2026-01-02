@@ -18,5 +18,4 @@ Repositorio oficial de los widgets personalizados para StreamElements.
 > ⚠️ **Aviso Legal:** Este código es propiedad intelectual exclusiva de **Eliana "Rage" Avila**. Su uso, copia o distribución sin permiso explícito está prohibido.
 
 ## 📦 Contenido
-1. **Chat Híbrido Pro:** Diseño de triple caja, tipografías duales (Lilita One + Poppins), roles automáticos y sistema anti-spam.
-2. **Subathon Timer Visual:** Contador con animaciones SVG, efectos de fuego (Happy Hour), tren de texto y ruleta automática.
+1. **Subathon Timer Visual:** Contador con animaciones SVG, efectos de fuego (Happy Hour), tren de texto y ruleta automática.
