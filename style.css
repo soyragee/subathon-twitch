@@ -1,0 +1,86 @@
+/* ==========================================================================
+   Widget Subathon Timer - Estilo Visual
+   Propiedad de: Eliana "Rage" Avila (@rxgeit)
+   Año: 2026
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+body { 
+    margin: 0; 
+    overflow: hidden; 
+    width: 100vw; 
+    height: 100vh; 
+}
+
+.main-container {
+    position: relative; 
+    width: 100%; 
+    height: 100%;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+
+/* SVG PRINCIPAL */
+svg#svg-bg {
+    width: 470px; 
+    height: auto; 
+    overflow: visible;
+    z-index: 1; 
+    transition: filter 1.5s ease-in-out; 
+    filter: drop-shadow(0px 10px 10px rgba(0,0,0,0.5));
+}
+
+rect {
+    transition: fill 1s ease, stroke 1s ease;
+}
+
+/* RELOJ */
+#timer-container {
+    position: absolute; 
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -65%); 
+    z-index: 100; 
+    text-align: center; 
+    pointer-events: none; 
+    width: 470px;
+}
+
+#timer {
+    font-family: 'Fredoka One', cursive; 
+    font-size: 75px;
+    color: {{timerColor}}; 
+    text-shadow: 2px 2px 0px rgba(0,0,0,0.2); 
+    letter-spacing: 2px;
+}
+
+#fire-overlay { 
+    transition: opacity 1.5s ease-in-out; 
+}
+
+/* ANIMACIONES */
+.text-zoom { animation: namePulse 0.4s ease-in-out; transform-box: fill-box; transform-origin: center; }
+@keyframes namePulse { 0% { transform: scale(1); } 50% { transform: scale(1.3); } 100% { transform: scale(1); } }
+
+.mask-active { mask-image: linear-gradient(90deg, transparent 0%, black 5%, black 95%, transparent 100%); -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 5%, black 95%, transparent 100%); }
+
+.train-active text { text-anchor: start !important; }
+.train-active { animation: trainScroll 20s linear infinite; }
+@keyframes trainScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-2000px); } }
+
+.paused { animation: blinker 1.5s linear infinite; opacity: 0.6; }
+@keyframes blinker { 50% { opacity: 0.3; } }
+
+.spinning-blur { animation: motionBlur 0.1s infinite; fill-opacity: 0.9; fill: #ffffff !important; }
+@keyframes motionBlur { 0% { filter: blur(0px); transform: translateY(0px); } 50% { filter: blur(3px); transform: translateY(1px); } 100% { filter: blur(0px); transform: translateY(0px); } }
+
+.rect-fire-active { animation: fireBgAnim 0.8s infinite alternate; }
+@keyframes fireBgAnim { 0% { fill: #FF0000; } 50% { fill: #FF4500; } 100% { fill: #FFD700; } }
+
+.container-fire-border { animation: fireBorderPulse 1.5s infinite alternate ease-in-out; }
+@keyframes fireBorderPulse { 0% { filter: drop-shadow(0 0 5px #FF0000); } 100% { filter: drop-shadow(0 0 15px #FFD700) drop-shadow(0 0 25px #FF4500); } }
+
+.text-cooldown { animation: coolDownPulse 2s infinite ease-in-out; }
+@keyframes coolDownPulse { 0% { fill: #CCCCCC; opacity: 0.8; } 50% { fill: #FFFFFF; opacity: 1; text-shadow: 0 0 5px #CCCCCC; } 100% { fill: #CCCCCC; opacity: 0.8; } }
